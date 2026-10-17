@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Employee</title>
+  </head>
+  <body>
+    <h1> Lodha's Company</h1>
+    <h3> Employee Details :</h3>
+    
+    <script>
+      var name, num, age, sal;
+      getdata();
+      let employee = {
+        EmpName : name,
+        EmpNum : num,
+        EmpAge : age,
+        EmpSal : sal,
+      };
+
+      display();
+
+      function getdata()
+      {
+        name = prompt("Enter Employee Name");
+        num = prompt("Enter Employee Number");
+        age = prompt("Enter Employee Age");
+        sal = prompt("Enter Employee Salary");
+      }
+
+      function display()
+      {
+        document.write(`Employee name : ${employee.EmpName}<br/>`);
+        document.write(`Employee number : ${employee.EmpNum}<br/>`);
+        document.write(`Employee age : ${employee.EmpAge}<br/>`);
+        document.write(`Employee salary : ${employee.EmpSal}<br/>`);
+      }
+    </script>
+  </body>
+</html>

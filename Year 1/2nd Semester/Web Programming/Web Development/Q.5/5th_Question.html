@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+    <style>
+	table {
+            font-family: 'Times New Roman', serif;}
+
+       h2{
+	  font-style:"Times New Roman";
+	  font-size: 24px;
+	  text-align:center;
+	 }
+	table{
+		margin:auto;
+		}
+	td{
+		padding:20px;
+		}
+	td.label {
+	    
+            background-color: #d3e4ff;
+            text-align: right;
+            width: 150px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>Student Registration Form</h2>
+
+    <form>
+        <table border="2px">
+            <tr>
+                <td class="label">Name:</td>
+                <td><input type="text" name="name"></td>
+		<td rowspan="2"><img src="download.png" alt="rv"></td>
+            </tr>
+            <tr>
+                <td class="label">Class:</td>
+                <td><input type="text" name="class"></td>
+            </tr>
+            <tr>
+                <td class="label">Qualification:</td>
+                <td colspan="3">
+                    <div class="radio-btn">
+                        <label><input type="radio" name="qualification" value="B.Tech"> B.Tech</label>
+                        <label><input type="radio" name="qualification" value="M.Tech"> M.Tech</label>
+                        <label><input type="radio" name="qualification" value="MBA"> MBA</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Address:</td>
+                <td colspan="3"><textarea name="address" rows="3"></textarea></td>
+            </tr>
+            <tr>
+                <td class="label">Email:</td>
+                <td colspan="3"><input type="email" name="email"></td>
+            </tr>
+            <tr>
+                <td class="label">Photo Upload:</td>
+                <td colspan="3"><input type="file" name="photo"></td>
+            </tr>
+  	    <tr>
+		<td colspan="3"><input type="submit" value="Register"></td>
+	    </tr>
+     
+        </table>
+
+        
+    </form>
+
+</body>
+</html>

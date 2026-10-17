@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Mario Game</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #5c94fc;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+    #game-container {
+      text-align: center;
+      padding: 20px;
+    }
+    #game {
+      position: relative;
+      width: 800px;
+      height: 400px;
+      margin: 0 auto;
+      background: url('https://th.bing.com/th/id/OIP.HyxdilQaS2PX-ktR-sxOGAHaEo?cb=iwc2&rs=1&pid=ImgDetMain' ) no-repeat center/cover;
+      border: 5px solid #333;
+    }
+    #mario {
+      position: absolute;
+      width: 40px;
+      height: 50px;
+      bottom: 0;
+      left: 50px;
+      background: url('https://pngimg.com/d/mario_PNG88.png') no-repeat center/cover;
+      border-radius: 10px;
+    }
+    #obstacle {
+      position: absolute;
+      width: 50px;
+      height: 80px;
+      bottom: 0;
+      right: 0;
+      background: url('https://th.bing.com/th/id/R.c8995a406574bccaf202ce9f0df783dc?rik=xBVtXBjQJemqHw&riu=http%3a%2f%2f3.bp.blogspot.com%2f-_HHgexxNJh8%2fUpY47MvKx3I%2fAAAAAAAAANo%2fuzU0fFz_jL8%2fs1600%2fVinus_Fire_Trap_NSMBDIY.png&ehk=QqpU7HY5uOrPEYJW0Ia1jl4d4T%2fMqTIezSTN1zyTLxA%3d&risl=&pid=ImgRaw&r=0') no-repeat center/cover;
+      animation: moveObstacle 5s linear infinite;
+    }
+    @keyframes moveObstacle {
+      0% { right: -40px; }
+      100% { right: 100%; }
+    }
+    .jump {
+      animation: jump 0.5s ease;
+    }
+    @keyframes jump {
+      0% { bottom: 0; }
+      50% { bottom: 120px; }
+      100% { bottom: 0; }
+    }
+    #score {
+      font-size: 20px;
+      color: white;
+      margin-bottom: 10px;
+    }
+    #controls {
+      margin-top: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="game-container">
+    <div id="score">Score: 0</div>
+    <div id="game">
+      <div id="mario"></div>
+      <div id="obstacle"></div>
+    </div>
+    <div id="controls">
+      <button id="playBtn">Play</button>
+      <button id="restartBtn">Restart</button>
+    </div>
+  </div>
+  <audio id="bgm" src="bgm.mp3" loop></audio>
+
+  <script>
+    const mario = document.getElementById('mario');
+    const obstacle = document.getElementById('obstacle');
+    const bgm = document.getElementById('bgm');
+    const scoreDisplay = document.getElementById('score');
+    const playBtn = document.getElementById('playBtn');
+    const restartBtn = document.getElementById('restartBtn');
+
+    let score = 0;
+    let gameRunning = false;
+    let bgmStarted = false;
+    let collisionInterval;
+    let scoreInterval;
+
+    function startGame() {
+      if (!bgmStarted) {
+        bgm.play().catch(() => {});
+        bgmStarted = true;
+      }
+      obstacle.style.animation = 'moveObstacle 2s linear infinite';
+      score = 0;
+      gameRunning = true;
+      scoreDisplay.textContent = 'Score: 0';
+
+      collisionInterval = setInterval(() => {
+        const marioBottom = parseInt(window.getComputedStyle(mario).getPropertyValue('bottom'));
+        const obstacleLeft = obstacle.offsetLeft;
+
+        if (obstacleLeft < 90 && obstacleLeft > 10 && marioBottom < 40) {
+          alert('Game Over!');
+          bgm.pause();
+          obstacle.style.animation = 'none';
+          gameRunning = false;
+          clearInterval(collisionInterval);
+          clearInterval(scoreInterval);
+        }
+      }, 10);
+
+      scoreInterval = setInterval(() => {
+        if (gameRunning) {
+          score++;
+          scoreDisplay.textContent = 'Score: ' + score;
+        }
+      }, 1000);
+    }
+
+    document.addEventListener('keydown', function(event) {
+      if (event.code === 'Space' && gameRunning) {
+        if (!mario.classList.contains('jump')) {
+          mario.classList.add('jump');
+          setTimeout(() => {
+            mario.classList.remove('jump');
+          }, 500);
+        }
+      }
+    });
+
+    playBtn.addEventListener('click', () => {
+    bgm.play().catch(err => console.error('Autoplay blocked:', err)); // Ensures audio 
+  bgm.muted = false; // Explicitly unmute the audio
+  bgm.volume = 1.0; // Set volume to max
+
+      if (!gameRunning) startGame();
+    });
+
+    restartBtn.addEventListener('click', () => {
+      location.reload();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<html>
+<title>Fresicca Retail Store</title>
+<header>
+    <style>
+        .table{
+            font-size: large;
+            border-radius: 40px;
+        }
+        .table:hover{
+            background-color: aqua;
+        }
+        input{
+            border-radius:10px;
+        }
+        input:hover{
+            box-shadow:0 2px 7px  rgb(255, 60, 0);
+        }
+        input:focus {
+            background-color: beige;
+        }
+        button{
+            border-radius: 10px;
+        }
+        button:hover{
+            box-shadow:0 2px 7px  rgb(255, 60, 0);
+            background-color: red;
+        }
+        img:hover{
+            box-shadow:0 2px 7px  rgb(255, 60, 0);
+        }
+        textarea:focus{
+            background-color: beige;
+        }
+        textarea:hover{
+            box-shadow:0 2px 7px  rgb(255, 60, 0);
+        }
+        div{
+            position: fixed;
+            right:10px;
+            background-color: yellow;
+            border:5px dashed black;
+            width:150px;
+            text-align: center;
+            color:#333;
+            height:120px;
+            border-radius: 25px;
+        }
+        
+    </style>
+    </header>
+<body style="margin:0;">
+
+<!--header bar-->
+<table style="background-color:greenyellow;" width="100%" height="70">
+    <tr>
+        <td><img border="2" src="C:\Users\Navtej Chakravarty\Pictures\Name_logo.png" height="70" width="150"></td>
+        <td>City: <select style="height:50%; width:50%">
+                <option>Banglore</option>
+                <option>Manglore</option>
+                <option>Mysore</option>
+                <option>Mumbai</option>
+                <option>Delhi</option>
+                <option>Hyderabad</option>
+                <option>Chennai</option>
+                <option>Pune</option>
+                <option>Guwahati</option>
+                </select>
+        <td><center><input type="text" name="search" placeholder="What are you looking for?" style="height:50px; width:400px">
+            <button onclick="window.location.href='https://www.google.co.in/'" style="height:50px ; width=50px;">Search</button></center></td>
+        <td class="table"><marquee><center><script> 
+            const today = new Date();
+            const hour = today.getHours();
+            let g;
+            if (hour < 12) {
+              g = "Good Morning";
+            } else if (hour < 14) {
+              g = "Good Afternoon";
+            } else {
+              g = "Good Evening";
+            }
+        
+            const message = ${g}, visitor!;
+            document.write(message); 
+          </script>
+          </marquee></center></td>
+        <td><center><a href="https://www.google.co.in/"><img style="border-radius: 5px;" src="C:\Users\Navtej Chakravarty\Pictures\cart.png" height="40" width="40"></a></center></td>
+        <td><center><a href="https://www.google.co.in/"><img style="border-radius: 5px;" src="C:\Users\Navtej Chakravarty\Pictures\loginpge.png" height="40" width="40"></a></center></td>    
+    </tr>   
+</table>
+
+
+<!--Navigation Bar-->
+<nav style="background-color: #333; text-align: center; color:#fff;">
+    <table cellspacing="5" cellpadding="5" border="0" align="center">
+    <tr>
+        <td><button onclick="window.location.href='#h'" style="background-color: #333; color: aliceblue; height: 30px; width:80px;">Categories</a></button></td>
+        <td><button onclick="window.location.href='#L'" style="background-color: #333; color: aliceblue; height: 30px; width:80px;">Locations</a></button></td>
+        <td><button onclick="window.location.href='#f'" style="background-color: #333; color: aliceblue; height: 30px; width:80px;">CONTACT</a></button></td>
+    </tr>
+    </table>
+    
+</nav>
+
+
+<!--Scrolling bar-->
+<table width="100%">
+    <tr>
+        <td>
+            <marquee width="100%" direction="left" height="20px" style="background-color: #F4DCBD;">
+                New Year discounts are coming your way!
+                </marquee>
+        </td>
+</table>
+
+
+<!--Product hero pane-->
+<div>
+    <p>Cart Total:<br><br> ₹<span id="cartTotal">0.00</span></p>
+    <button onclick="window.location.href='file:///C:/Users/Navtej%20Chakravarty/Desktop/html/HTML/WEBPAGE_STORE.html'">Checkout</button>
+</div>
+<table style="width:100%">
+    <tr>
+        <td><img style="width:100%;" src="C:\Users\Navtej Chakravarty\Pictures\Stores\bgbg.jpg"></td>
+    </tr>
+</table>
+
+
+<!-- Propular caterories-->   
+<table style="background-color: #adff2f" width="100%" height="70" id="h">
+        <tr>
+            <td colspan="9">
+                <h3>Popular Categories</h3>
+            </th>
+        </tr>
+        
+        <tr>
+            <th><a href="https://www.google.co.in/"><img border="1" src="C:\Users\Navtej Chakravarty\Pictures\dairy.png" height="120" width="120"></a></th> 
+            <th><a href="https://www.google.co.in/"><img border="1" src="C:\Users\Navtej Chakravarty\Pictures\tea.png" height="120" width="120"></a></th> 
+            <th><a href="https://www.google.co.in/"><img border="1" src="C:\Users\Navtej Chakravarty\Pictures\softdrinks.png" height="120" width="120"></a></th> 
+            <th><a href="https://www.google.co.in/"><img border="1" src="C:\Users\Navtej Chakravarty\Pictures\cleaners.png" height="120" width="120"></a></th> 
+            <th><a href="https://www.google.co.in/"><img border="1" src="C:\Users\Navtej Chakravarty\Pictures\bathsoap.png" height="120" width="120"></a></th> 
+            <th><a href="https://www.google.co.in/"><img border="1" src="C:\Users\Navtej Chakravarty\Pictures\toothpaste.png" height="120" width="120"></a></th> 
+            <th><a href="https://www.google.co.in/"><img border="1" src="C:\Users\Navtej Chakravarty\Pictures\shampoo.png" height="120" width="120"></a></th>   
+            <th><a href="https://www.google.co.in/"><img border="1" src="C:\Users\Navtej Chakravarty\Pictures\Towels.png" height="120" width="120"></a></th> 
+            <th><a href="https://www.google.co.in/"><img border="1" src="C:\Users\Navtej Chakravarty\Pictures\Morecategorires.png" height="120" width="120"></a></th>   
+        </tr>
+        <tr>
+            <th><h3>Dairy</h3></th>
+            <th><h3>Tea</h3></th>
+            <th><h3>Soft Drinks</h3></th>
+            <th><h3>Cleaners</h3></th>
+            <th><h3>Bath Soaps</h3></th>
+            <th><h3>Toothpaste</h3></th>
+            <th><h3>Shampoo</h3></th>
+            <th><h3>Pooja Needs</h3></th> 
+        </tr>  
+</table>
+<table width="100%">
+    <tr>
+    <td colspan="6"><h3>New Year Specials</h3></td>
+    </tr>
+    <tr>
+    <td><center><a href="https://www.google.co.in/"><img border="1" src="C:\Users\Navtej Chakravarty\Pictures\pro1.jpg" height="150" width="150"></a></center></td>
+    <td><center><a href="https://www.google.co.in/"><img border="1" src="C:\Users\Navtej Chakravarty\Pictures\pro2.jpg" height="150" width="150"></a></center></td>
+    <td><center><a href="https://www.google.co.in/"><img border="1" src="C:\Users\Navtej Chakravarty\Pictures\pro3.jpg" height="150" width="150"></a></center></td>
+    <td><center><a href="https://www.google.co.in/"><img border="1" src="C:\Users\Navtej Chakravarty\Pictures\pro4.jpg" height="150" width="150"></a></center></td>
+    <td><center><a href="https://www.google.co.in/"><img border="1" src="C:\Users\Navtej Chakravarty\Pictures\pro5.jpg" height="150" width="150"></a></center></td>
+    <td><center><a href="https://www.google.co.in/"><img border="1" src="C:\Users\Navtej Chakravarty\Pictures\pro6.jpg" height="150" width="150"></a></center></td>
+   
+    </tr>  
+    
+    <tr>
+        <td><center><h5>Cadbury Celebrations<br>Rich Dry Fruit Chocolate<br>Gift Box : 177 gms<br><h3>Rs. 230</h3></h5></center></td>
+        <td><center><h5>Cadbury Celebrations<br>Special Silk Selects Gift<br>Pack : 233 gms<br><h3>Rs. 299</h3></h5></center></td>
+        <td><center><h5>GRB Butterscotch Soan<br>Cake : 100 gms<br><h3>Rs. 120</h3></h5></center></td>
+        <td><center><h5>GRB Rasogolla Tin <br>: 500 gms<br><h3>Rs. 150</h3></h5></center></td>
+        <td><center><h5>GRB Real Cardamom<br>Soan Papdi : 200 gms<br><h3>Rs. 70</h3></h5></center></td>
+        <td><center><h5>Haldiram's Badam<br>Halwa : 400 gms<br><h3>Rs. 99   </h3></h5></center></td>
+    </tr>
+    <tr>
+        <td><center><button onclick="window.location.href='https://www.google.co.in/'" style="background-color:greenyellow; color: rgb(0, 0, 0); width:80%; height:40px">Buy</a></button></td></center>
+        <td><center><button onclick="window.location.href='https://www.google.co.in/'" style="background-color:greenyellow; color: rgb(0, 0, 0); width:80%; height:40px">Buy</a></button></td></center>
+        <td><center><button onclick="window.location.href='https://www.google.co.in/'" style="background-color:greenyellow; color: rgb(0, 0, 0); width:80%; height:40px">Buy</a></button></td></center>
+        <td><center><button onclick="window.location.href='https://www.google.co.in/'" style="background-color:greenyellow; color: rgb(0, 0, 0); width:80%; height:40px">Buy</a></button></td></center>
+        <td><center><button onclick="window.location.href='https://www.google.co.in/'" style="background-color:greenyellow; color: rgb(0, 0, 0); width:80%; height:40px">Buy</a></button></td></center>
+        <td><center><button onclick="window.location.href='https://www.google.co.in/'" style="background-color:greenyellow; color: rgb(0, 0, 0); width:80%; height:40px">Buy</a></button></td></center>
+    </tr>
+    <tr>
+        <td><center><button onclick="atc(230)" style="background-color:rgb(0, 0, 0); color: rgb(255, 255, 255); width:80%; height:40px">Add To Cart</a></button></center></td>
+        <td><center><button onclick="atc(299)" style="background-color:rgb(0, 0, 0); color: rgb(255, 255, 255); width:80%; height:40px">Add To Cart</a></button></td></button></td></center>
+        <td><center><button onclick="atc(120)" style="background-color:rgb(0, 0, 0); color: rgb(255, 255, 255); width:80%; height:40px">Add To Cart</a></button></td></button></td></center>
+        <td><center><button onclick="atc(150)" style="background-color:rgb(0, 0, 0); color: rgb(255, 255, 255); width:80%; height:40px">Add To Cart</a></button></td></button></td></center>
+        <td><center><button onclick="atc(70)" style="background-color:rgb(0, 0, 0); color: rgb(255, 255, 255); width:80%; height:40px">Add To Cart</a></button></td></button></td></center>
+        <td><center><button onclick="atc(99)" style="background-color:rgb(0, 0, 0); color: rgb(255, 255, 255); width:80%; height:40px">Add To Cart</a></button></td></button></td></center>
+    </tr>    
+</table>
+<script>
+    let cartTotal = 0; 
+
+    function atc(p) {
+      cartTotal += p;
+      document.getElementById("cartTotal").textContent = cartTotal; 
+      alert("Product added to cart!");
+    }
+  </script>
+
+<!--Offer Anouncement-->
+<fieldset>
+    <center><a href="https://www.google.co.in/"><img src="C:\Users\Navtej Chakravarty\Pictures\add.jpg" height="50%" width="95%" border="2"></a></center>
+</fieldset>
+
+
+<!--3 type of categories-->
+<table width="100%" cellspadding="7" cellspacing="7">
+    <tr >
+        <td><center><a href="https://www.google.co.in/"><img border="1" src="C:\Users\Navtej Chakravarty\Pictures\brkfst.jpg" height="300" width="100%"></a></center></td>
+        <td><center><a href="https://www.google.co.in/"><img border="1" src="C:\Users\Navtej Chakravarty\Pictures\stationary.jpg" height="300" width="100%"></a></center></td>
+        <td><center><a href="https://www.google.co.in/"><img border="1" src="C:\Users\Navtej Chakravarty\Pictures\homedecor.jpg" height="300" width="100%"></a></center></td>
+</table>
+
+<!--Neartest Store-->
+<table id="L" width="100%" cellspacing="5" style="background-color: #adff2f;">
+    <tr>
+        <td colspan="6"><h2>Available Stores</h2></td>
+        </tr>
+    <tr>
+        <td><center><a href="https://www.google.com/maps/place/Fresica+Retail+Store/@12.8639525,77.7688684,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae72c1b61eb1db:0x1b9c48fbfd06691f!8m2!3d12.8639525!4d77.7714433!16s%2Fg%2F11b73nfk1r?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D"><img border="3" src="C:\Users\Navtej Chakravarty\Pictures\Stores\1.jpg" height="250" width="200"></a></center></td>
+        <td><center><a href="https://www.google.com/maps/place/Fresica+Retail+Store/@12.8639525,77.7688684,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae72c1b61eb1db:0x1b9c48fbfd06691f!8m2!3d12.8639525!4d77.7714433!16s%2Fg%2F11b73nfk1r?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D"><img border="3" src="C:\Users\Navtej Chakravarty\Pictures\Stores\2.jpg" height="250" width="200"></a></center></td>
+        <td><center><a href="https://www.google.com/maps/place/Fresica+Retail+Store/@12.8639525,77.7688684,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae72c1b61eb1db:0x1b9c48fbfd06691f!8m2!3d12.8639525!4d77.7714433!16s%2Fg%2F11b73nfk1r?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D"><img border="3" src="C:\Users\Navtej Chakravarty\Pictures\Stores\3.jpg" height="250" width="200"></a></center></td>
+        <td><center><a href="https://www.google.com/maps/place/Fresica+Retail+Store/@12.8639525,77.7688684,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae72c1b61eb1db:0x1b9c48fbfd06691f!8m2!3d12.8639525!4d77.7714433!16s%2Fg%2F11b73nfk1r?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D"><img border="3" src="C:\Users\Navtej Chakravarty\Pictures\Stores\4.jpg" height="250" width="200"></a></center></td>
+        <td><center><a href="https://www.google.com/maps/place/Fresica+Retail+Store/@12.8639525,77.7688684,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae72c1b61eb1db:0x1b9c48fbfd06691f!8m2!3d12.8639525!4d77.7714433!16s%2Fg%2F11b73nfk1r?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D"><img border="3" src="C:\Users\Navtej Chakravarty\Pictures\Stores\5.jpg" height="250" width="200"></a></center></td>
+        <td><center><a href="https://www.google.com/maps/place/Fresica+Retail+Store/@12.8639525,77.7688684,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae72c1b61eb1db:0x1b9c48fbfd06691f!8m2!3d12.8639525!4d77.7714433!16s%2Fg%2F11b73nfk1r?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D"><img border="3" src="C:\Users\Navtej Chakravarty\Pictures\Stores\7.jpg" height="250" width="200"></a></center></td>
+    </tr>   
+    <tr>
+        <td><center><h4>Banglore</h4></center></td>
+        <td><center><h4>Mysore</h4></center></td>
+        <td><center><h4>Manglore</h4></center></td>
+        <td><center><h4>Chennai</h4></center></td>
+        <td><center><h4>Guwahati</h4></center></td>
+        <td><center><h4>Pune</h4></center></td> 
+</table>
+<br>
+<br>
+
+
+<!--Feedback Form-->
+<table style="border-color: #adff2f;" cellpadding="5">
+    <tr>
+    <td><form>
+            <h2><center>Feedback</center></h2>
+            <h4>Name: <input type="text" placeholder="Enter your name" size="90"></h4>
+            <h4>Phone : <input type="number" placeholder="Enter 10 Digit Number" maxlength="10" >
+            <h4>Address:<br><textarea cols="120" rows="3" placeholder="Door No./Locality/Street Name/City/State/Pincode"></textarea></h4><br>
+            <h4>Feedback:<br><textarea cols="120" rows="5" placeholder="We value your feedback"></textarea> </h4>
+        
+        </form>
+    </td>
+    <td>
+        <img src="C:\Users\Navtej Chakravarty\Pictures\feedback.jpg" width="100%" height="100%">
+    </td>    
+    </tr>
+    <tr>
+        <td><center><button onclick="alert('Thankyou For your Feedback')" style="height:50px; width:200px;">SUBMIT</button></center></td>
+    </tr>    
+</table>
+
+<!--Footer-->
+<table style="background-color: #333;" width="98%" align="center" id="f">
+    <tr>
+        <td style="width: 30%;"><br><br><center><img border="2" src="C:\Users\Navtej Chakravarty\Pictures\Name_logo.png" height="150" width="250"></center><br><br></td>
+        <td style="width: 20%;"><center><h4 style="color: white;">Email: fressicahelp@gmail.com<br><br><br>Contacts:<br><br>Phone: 9010901090<br><br>Tel:      0101801801</h4></center></td>
+        <td><br><br><center><h4 style="color: white;">Social Media Links</h4></center>
+            <center><a href="https://www.instagram.com/"><img style="border-radius:20px;" src="C:\Users\Navtej Chakravarty\Pictures\Stores\insta.jpg" height="80" width="80"></a></center><br>
+            <center><a href="https://web.whatsapp.com/"><img style="border-radius:20px;" src="C:\Users\Navtej Chakravarty\Pictures\Stores\whatsapp.png" height="80" width="80"></a></center>
+        
+        </td>
+
+
+</table>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mini Mario Game</title>
+  <style>
+    body {
+      margin: 0;
+      background: #87ceeb;
+      font-family: sans-serif;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    #game {
+      width: 800px;
+      height: 400px;
+      margin: 20px auto;
+      background: url('https://th.bing.com/th/id/OIP.HyxdilQaS2PX-ktR-sxOGAHaEo?cb=iwc2&rs=1&pid=ImgDetMain') no-repeat center/cover;
+      position: relative;
+      border: 3px solid #000;
+    }
+
+    #mario {
+      width: 40px;
+      height: 50px;
+      background: url('https://pngimg.com/d/mario_PNG88.png') no-repeat center/contain;
+      position: absolute;
+      bottom: 0;
+      left: 50px;
+    }
+
+    #obstacle {
+      width: 50px;
+      height: 80px;
+      background: url('https://th.bing.com/th/id/R.c8995a406574bccaf202ce9f0df783dc?rik=xBVtXBjQJemqHw&riu=http%3a%2f%2f3.bp.blogspot.com%2f-_HHgexxNJh8%2fUpY47MvKx3I%2fAAAAAAAAANo%2fuzU0fFz_jL8%2fs1600%2fVinus_Fire_Trap_NSMBDIY.png&ehk=QqpU7HY5uOrPEYJW0Ia1jl4d4T%2fMqTIezSTN1zyTLxA%3d&risl=&pid=ImgRaw&r=0') no-repeat center/contain;
+      position: absolute;
+      bottom: 0;
+      left: 800px;
+    }
+
+    .jump {
+      animation: jump 0.6s ease-out;
+    }
+
+    @keyframes jump {
+      0% { bottom: 0; }
+      50% { bottom: 140px; }
+      100% { bottom: 0; }
+    }
+
+    #score {
+      font-size: 20px;
+      color: white;
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h2 style="color: white;">Mini Mario Game</h2>
+<p style="color: white;">Press SPACE to jump</p>
+
+<div id="game">
+  <div id="mario"></div>
+  <div id="obstacle"></div>
+</div>
+
+<p id="score">Score: 0</p>
+<button onclick="startGame()">Play</button>
+
+<script>
+  const mario = document.getElementById("mario");
+  const obstacle = document.getElementById("obstacle");
+  const scoreText = document.getElementById("score");
+
+  let gameInterval;
+  let score = 0;
+  let gameRunning = false;
+
+  function jump() {
+    if (!mario.classList.contains("jump")) {
+      mario.classList.add("jump");
+      setTimeout(() => {
+        mario.classList.remove("jump");
+      }, 600);
+    }
+  }
+
+  function startGame() {
+    if (gameRunning) return;
+    gameRunning = true;
+    obstacle.style.left = "800px";
+    score = 0;
+    scoreText.textContent = "Score: 0";
+
+    gameInterval = setInterval(() => {
+      const obstacleLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue("left"));
+      const marioBottom = parseInt(window.getComputedStyle(mario).getPropertyValue("bottom"));
+
+      
+      if (obstacleLeft <= -60) {
+        obstacle.style.left = "800px";
+        score++;
+        scoreText.textContent = "Score: " + score;
+      } else {
+        obstacle.style.left = (obstacleLeft - 5) + "px";
+      }
+
+      
+      if (obstacleLeft < 100 && obstacleLeft > 40 && marioBottom < 60) {
+        clearInterval(gameInterval);
+        alert("Game Over! Score: " + score);
+        gameRunning = false;
+      }
+    }, 20);
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.code === "Space" && gameRunning) {
+      jump();
+    }
+  });
+</script>
+
+</body>
+</html>

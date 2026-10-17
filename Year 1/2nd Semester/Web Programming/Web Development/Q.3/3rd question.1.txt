@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>lab programme</title>
+</head>
+<body>
+  <h2>Restaurant Form</h2>
+  <form action="submit-form.php" method="post">
+    <table border="4">
+      <tr>
+        <td>Name:</td>
+        <td><input type="text" name="name" /></td>
+      </tr>
+      <tr>
+        <td>Address:</td>
+        <td><textarea name="address" rows="3" cols="25"></textarea></td>
+      </tr>
+      <tr>
+        <td>Phone Number:</td>
+        <td><input type="text" name="phone" /></td>
+      </tr>
+      <tr>
+        <td>Food Items:</td>
+        <td>
+          <input type="checkbox" name="food[]" value="Milk" />Milk<br />
+          <input type="checkbox" name="food[]" value="Bread" />Bread<br />
+          <input type="checkbox" name="food[]" value="Egg" />Egg<br />
+          <input type="checkbox" name="food[]" value="Tea" />Tea
+        </td>
+      </tr>
+      <tr>
+        <td>Payment:</td>
+        <td>
+          <input type="radio" name="payment" value="Cash" />Cash<br />
+          <input type="radio" name="payment" value="Card" />Card<br />
+          <input type="radio" name="payment" value="UPI" />UPI
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:center;">
+          <input type="submit" value="Submit" />
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

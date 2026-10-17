@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>Multiplication Table</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      var rows = prompt("How many rows for your multiplication table?");
+      var cols = prompt("How many columns for your multiplication table?");
+      if (rows == "" || rows == null) rows = 10;
+      if (cols == "" || cols == null) cols = 10;
+
+      createtable(rows, cols);
+
+      function createtable(rows, cols)
+      {
+        var output = "<table border='2' cellpadding='3'>";
+
+        for (let i = 1; i <= rows; i++)
+        {
+          output = output + "<tr>"; 
+          for (let j = 1; j <= cols; j++)
+          {
+            output = output + "<td>" + j + "*" + i + " = " + (j * i) + "</td>";
+          }
+          output = output + "</tr>";
+        }
+        output = output + "</table>";
+        document.write(output);
+      }
+
+    </script>
+  </body>
+</html>

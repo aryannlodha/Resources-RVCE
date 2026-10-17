@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Catch the Ball</title>
+  <style>
+    body { margin: 0; background: #f0f0f0; overflow: hidden; }
+    #paddle {
+      width: 100px; height: 20px;
+      background: blue; position: absolute;
+      bottom: 20px; left: 50%; transform: translateX(-50%);
+    }
+    #ball {
+      width: 20px; height: 20px;
+      background: red; border-radius: 50%;
+      position: absolute; top: 0; left: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div id="paddle"></div>
+  <div id="ball"></div>
+
+  <script>
+    const paddle = document.getElementById("paddle");
+    const ball = document.getElementById("ball");
+
+    let paddleX = window.innerWidth / 2 - 50;
+    let ballX = Math.random() * (window.innerWidth - 20);
+    let ballY = 0;
+    let speed = 3;
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") paddleX -= 20;
+      if (e.key === "ArrowRight") paddleX += 20;
+      paddle.style.left = paddleX + "px";
+    });
+
+    function dropBall() {
+      ballY += speed;
+      ball.style.top = ballY + "px";
+      ball.style.left = ballX + "px";
+
+      // Collision with paddle
+      let paddleRect = paddle.getBoundingClientRect();
+      let ballRect = ball.getBoundingClientRect();
+
+      if (
+        ballRect.bottom >= paddleRect.top &&
+        ballRect.left >= paddleRect.left &&
+        ballRect.right <= paddleRect.right
+      ) {
+        alert("🎉 You caught it!");
+        reset();
+      }
+
+      // Missed
+      if (ballY > window.innerHeight) {
+        alert("😢 You missed!");
+        reset();
+      }
+
+      requestAnimationFrame(dropBall);
+    }
+
+    function reset() {
+      ballY = 0;
+      ballX = Math.random() * (window.innerWidth - 20);
+    }
+
+    dropBall();
+  </script>
+</body>
+</html>
