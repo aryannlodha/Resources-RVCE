@@ -1,0 +1,9 @@
+# Personal & Sensitive folders (Will NEVER be uploaded to public repo)
+PERSONAL/
+[Pp][Ee][Rr][Ss][Oo][Nn][Aa][Ll]/
+_Original_Large_Files/
+*.env
+*.env.*
+*.pem
+*.key
+node_modules/
